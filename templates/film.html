@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ film['Назва фільму'] }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .film-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .film-details .card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .film-details li {
+            list-style: none;
+            padding: 6px 0;
+        }
+        .film-details strong {
+            display: inline-block;
+            min-width: 180px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            text-decoration: none;
+            background-color: #1e1e1e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ film['Назва фільму'] }}</h1>
+        <div class="film-details">
+            <div class="card">
+                <ul>
+                    <li><strong>Рік випуску:</strong> {{ film['Рік випуску'] }}</li>
+                    <li><strong>Тривалість:</strong> {{ film['Тривалість (хв)'] }} хв</li>
+                    <li><strong>Мова:</strong> {{ film['Мова'] }}</li>
+                    <li><strong>Жанр:</strong> {{ film['Жанр'] }}</li>
+                </ul>
+            </div>
+            <div class="card">
+                <ul>
+                    <li><strong>Тип:</strong> {{ film['Тип'] }}</li>
+                    <li><strong>Середня оцінка користувачів:</strong> {{ film['Середня оцінка користувачів'] }}</li>
+                    <li><strong>Кількість переглядів:</strong> {{ film['Кількість переглядів'] }}</li>
+                    <li><strong>Оцінка (внутрішня):</strong> {{ film['Оцінка (внутрішня)'] }}</li>
+                </ul>
+            </div>
+        </div>
+        <a href="/" class="back-button">← Назад на головну</a>
+    </div>
+</body>
+</html>

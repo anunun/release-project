@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>фільми</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎬 Каталог фільмів</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Фільми</a></li>
+                    <li><a href="https://youtu.be/dQw4w9WgXcQ?si=-1QYE0CgtLxK8yTP">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Список фільмів</h2>
+            <div class="film-grid">
+                {% for film in films %}
+                  <a class="film-card" href="/film/{{ film['ID'] }}">{{ film['Назва фільму'] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Мій сайт. Усі права захищені.</p>
+        </div>
+    </footer>
+</body>
+</html>
