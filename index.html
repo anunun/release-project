@@ -25,8 +25,8 @@
             <h2>Список фільмів</h2>
             <div class="film-grid">
                 {% for film in films %}
-                  <a class="film-card" href="/film/{{ film['ID'] }}">{{ film['Назва фільму'] }}</a>
-                  <img src="posters/images.png">
+                <a class="film-card" href="/film/{{ film['ID'] }}">{{ film['Назва фільму'] }}</a>
+                <img scr="https://uaserial.tv/images/serials/64/6422fd6423059013372255.webp">
                 {% endfor %}
             </div>
         </div>
@@ -34,6 +34,7 @@
 
     <footer>
         <div class="container">
+            <p>&copy; 2025 Мій сайт. Усі права захищені.</p>
         </div>
     </footer>
 </body>

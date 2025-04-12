@@ -21,8 +21,6 @@ def show_film(film_id):
     cursor.execute("SELECT * FROM films WHERE ID = ?", (film_id,))
     film = cursor.fetchone()
     conn.close()
-    if film is None:
-        return "Фільм не знайдено", 404
     return render_template("film.html", film=film)
 
 @app.route("/index.html")
