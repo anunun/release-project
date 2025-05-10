@@ -51,9 +51,9 @@
             Тривалість (хв):
             <select name="duration">
                 <option value="" {% if request.args.get('duration') == '' %}selected{% endif %}>Усі</option>
-                <option value="" {% if request.args.get('duration') == '60' %}selected{% endif %}>60</option>
-                <option value="" {% if request.args.get('duration') == '90' %}selected{% endif %}>90</option>
-                <option value="" {% if request.args.get('duration') == '120' %}selected{% endif %}>120</option>
+                <option value="60" {% if request.args.get('duration') == '60' %}selected{% endif %}>60</option>
+                <option value="90" {% if request.args.get('duration') == '90' %}selected{% endif %}>90</option>
+                <option value="120" {% if request.args.get('duration') == '120' %}selected{% endif %}>120</option>
             </select>
         </label>
 
