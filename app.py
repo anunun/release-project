@@ -16,6 +16,12 @@ def index():
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
 
+    if request.args.get("random") == "1":
+        cursor.execute("SELECT * FROM films ORDER BY RANDOM() LIMIT 1")
+        films = cursor.fetchall()
+        conn.close()
+        return render_template("index.html", films=films)
+
     query = "SELECT * FROM films WHERE 1=1"
     params = []
 

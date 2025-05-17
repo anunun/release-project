@@ -66,8 +66,9 @@
             Перегляди:
             <input type="number" name="views_max" placeholder="від" value="{{ request.args.get('views_max', '') }}">
         </label>
-
+        
         <button type="submit">🔍 Фільтрувати</button>
+        <button type="submit" name="random" value="1" class="random-button">🎲 Випадковий фільм</button>
     </form>
 
     <main>
