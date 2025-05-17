@@ -17,7 +17,7 @@ def index():
     cursor = conn.cursor()
 
     if request.args.get("random") == "1":
-        cursor.execute("SELECT * FROM films ORDER BY RANDOM() LIMIT 1")
+        cursor.execute("SELECT * FROM films ORDER BY RANDOM() LIMIT 4")
         films = cursor.fetchall()
         conn.close()
         return render_template("index.html", films=films)
@@ -48,9 +48,6 @@ def index():
     if views_max:
         query += ' AND "Кількість переглядів" >= ?'
         params.append(views_max)
-
-    print("QUERY:", query)
-    print("PARAMS:", params)
 
     cursor.execute(query, params)
     films = cursor.fetchall()
